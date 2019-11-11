@@ -5,8 +5,8 @@
 
 
 body {
-    background-image: url("https://images.unsplash.com/photo-1558051815-0f18e64e6280?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80");
-    background-size: contain;
+    background-image: url("https://images.unsplash.com/photo-1498612753354-772a30629934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80");
+    background-size: cover;
 }
 
 .letter {
@@ -15,10 +15,20 @@ body {
     margin: 50px auto 0;
     /* max-width: 90%; */
     min-height: 33%;
-    padding: 24px;
+    padding: 30px;
     position: relative;
     width: 70vw;
-    height: 80vh;
+    height: 95%;
+
+    display: grid;
+    grid-template: auto auto auto auto / auto;
+    grid-template-areas:
+        "header"
+        "mission"
+        "products"
+        "team"
+        "footer";
+    grid-row-gap: 30px;
 }
 
 .letter:before,
@@ -46,15 +56,19 @@ body {
     transform: rotate(1.4deg);
 }
 
+
+
+
 #header {
     margin-top: 5% auto;
     display: grid;
-    grid-template: auto auto / auto auto;
+    grid-template: auto auto / 10% 85%;
     grid-template-areas:
         "logo main-title"
         "logo nav";
     height: 20%;
     text-align: center;
+    grid-gap: 20px;
 }
 
 .logo {
@@ -69,10 +83,8 @@ body {
     font-weight: 100;
 }
 
-#subtitle {
-    grid-area: subtitle;
-    font-family: var(--header-font);
-}
+
+
 
 .typewriter {
     display: inline-block;
@@ -125,6 +137,17 @@ body {
 }
 
 
+
+
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
 .nav {
     grid-area: "nav";
     display: grid;
@@ -135,24 +158,62 @@ body {
     background-color: black;
     color: white;
     place-items: center center;
+    padding: .75em;
+    width: 100%;
 }
 
 #nav-home {
-    grid-area: "home";
+    grid-area: home;
 }
 
 #nav-products {
-    grid-area: "products";
+    grid-area: products;
 }
 
 #nav-mission {
-    grid-area: "mission";
+    grid-area: mission;
 }
 
 #nav-team {
-    grid-area: "team"
+    grid-area: team;
 }
 
 .nav-item:hover {
     text-decoration: underline;
+}
+
+
+
+
+.section {
+    width: 90%;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0 auto;
+    grid-gap: 10px;
+}
+
+.subtitle {
+    font-family: var(--header-font);
+    text-align: center;
+    grid-area: subtitle;
+}
+
+.section p {
+    font-family: var(--body-font);
+}
+
+
+
+#mission {
+    background-image: url("https://images.unsplash.com/photo-1494825514961-674db1ac2700?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-position: 50% 45%;
+    grid-area: mission;
+}
+
+#mission p {
+    text-indent: 2em;
+    padding: 0 50px 100px;
 }
