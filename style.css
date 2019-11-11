@@ -217,3 +217,37 @@ a:visited {
     text-indent: 2em;
     padding: 0 50px 100px;
 }
+
+
+#products {
+    grid-area: products;
+    display: grid;
+    grid-template: auto auto auto / 40% 40%;
+    grid-template-areas:
+        "subtitle subtitle"
+        "office household"
+        "art gifts";
+    justify-content: center;
+}
+
+.item {
+    width: 90%;
+    place-items: end;
+}
+
+#office {
+    grid-area: office;
+    align-self: end;
+}
+
+#gifts {
+    grid-area: gifts;
+}
+
+#household {
+    grid-area: household;
+}
+
+#art {
+    grid-area: art;
+}
